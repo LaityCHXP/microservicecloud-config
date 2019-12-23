@@ -20,14 +20,14 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200 
+
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.atguigu.springcloud.entities
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.chxp.entity
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
  
 eureka: 
-  client: #客户端注册进eureka服务列表内
+  client:
     service-url: 
       defaultZone: http://eureka7001.com:7001/eureka
   instance:
@@ -35,10 +35,10 @@ eureka:
     prefer-ip-address: true
  
 info:
-  app.name: atguigu-microservicecloud-springcloudconfig01
-  company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  app.name: chxp-microservicecloud
+  company.name: www.chxp.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
 ---
 server:
   port: 8001
@@ -56,14 +56,12 @@ spring:
       min-idle: 5
       initial-size: 5
       max-total: 5
-      max-wait-millis: 200  
-  
+      max-wait-millis: 200 
   
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.atguigu.springcloud.entities
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.chxp.entity
  
 eureka: 
   client: #客户端注册进eureka服务列表内
@@ -74,8 +72,8 @@ eureka:
     prefer-ip-address: true
  
 info:
-  app.name: atguigu-microservicecloud-springcloudconfig02
-  company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  app.name: chxp-microservicecloud
+  company.name: www.chxp.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
 
